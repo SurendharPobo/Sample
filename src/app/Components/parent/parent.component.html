@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <h3>Parent Component</h3>
+
+    <br>
+    <div *ngFor="let course of Courses">
+        <div *ngIf="course.id == CourseId">
+            <ul>
+                <li>
+                    <p><b>Name :</b>{{course.Name}}</p> 
+                    <p><b>Description :</b>{{course.Description}}</p>            
+                </li>
+            </ul>
+        </div>    
+    </div>
+    <br>
+    
+</div>
+
+<app-child [CoursesData]="Courses" (change)="GetCourseId($event)"></app-child>
