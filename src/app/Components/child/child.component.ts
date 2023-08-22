@@ -20,8 +20,7 @@ export class ChildComponent implements OnInit {
   clickId(){
     return this.PassCourseId.emit(this.CourseId);
   }
-
-
+  
   constructor() { }
 
   ngOnInit(): void {
