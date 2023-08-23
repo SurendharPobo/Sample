@@ -8,6 +8,9 @@ import { DataService } from 'src/app/Service/data.service';
 })
 export class DataComponent implements OnInit {
 
+  name='Surendhar';
+
+
   updateUserInfo: any;
 
   count=0;

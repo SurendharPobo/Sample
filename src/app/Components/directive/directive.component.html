@@ -1,22 +1,23 @@
-<!-- Directive Compotent -->
-<div *ngIf="users; else noUserFound" class="container-fluid">
-    <div *ngFor="let user of users">
-        <div [ngSwitch]="user.Gender">
-            <div *ngSwitchCase="'M'">
-                User Name :{{user.Fname}} Age :{{user.Age}}
-            </div>
-            <div *ngSwitchCase="'F'">
-                User Name :{{user.Fname}} Age :{{user.Age}}
+<div class="container-fluid px-4 mt-4">
+    <div *ngIf="users; else noUserFound">
+        <div *ngFor="let user of users">
+            <div [ngSwitch]="user.Gender">
+                <div *ngSwitchCase="'M'">
+                    <p><b>User Name:</b> {{user.Fname}}</p>
+                    <p><b>Age:</b> {{user.Age}}</p>
+                </div>
+                <div *ngSwitchCase="'F'">
+                    <p><b>User Name:</b> {{user.Fname}}</p>
+                    <p><b>Age:</b> {{user.Age}}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<ng-template #noUserFound>
-    No Users Found
-</ng-template>
-<br>
-<div class="container-fluid">
+    
+    <ng-template #noUserFound>
+        No Users Found
+    </ng-template>
+    <br>
     <div>
         Date : {{Day | date:'dd/MM/yyyy'}}
     </div>
@@ -36,4 +37,7 @@
     <div>
         JSON : {{Obj | json}}
     </div>
+
+        
+    
 </div>

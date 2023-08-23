@@ -1,54 +1,57 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <div class="form px-5 ">
-        <div class="form-group">
-            <label class="form-label" hi>Email address</label>
-            <input type="email" [(ngModel)]="email" formControlName="emailAddress" class="form-control" [ngClass]=" { 'is-invalid': submit && f.emailAddress.errors } "/>
-                <div *ngIf="submit && f.emailAddress.errors" class="invalid-feedback">
-                    <div *ngIf="f.emailAddress.errors.required">Email is required</div>
-                    <div *ngIf="f.emailAddress.errors.email">Enter correct email address</div>
+<div class="container-fluid px-4 mt-4">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form px-5 ">
+            <div class="form-group">
+                <label class="form-label" hi>Email address</label>
+                <input type="email" [(ngModel)]="email" formControlName="emailAddress" class="form-control" [ngClass]=" { 'is-invalid': submit && f.emailAddress.errors } "/>
+                    <div *ngIf="submit && f.emailAddress.errors" class="invalid-feedback">
+                        <div *ngIf="f.emailAddress.errors.required">Email is required</div>
+                        <div *ngIf="f.emailAddress.errors.email">Enter correct email address</div>
+                    </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" [(ngModel)]="password" formControlName="password" class="form-control" [ngClass]=" { 'is-invalid': submit && f.password.errors } " />
+                <div *ngIf="submit && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required!</div>     
+                    <div *ngIf="f.password.errors.minlength">Password length must be greater than 6!</div>
                 </div>
-        </div>
-        <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" [(ngModel)]="password" formControlName="password" class="form-control" [ngClass]=" { 'is-invalid': submit && f.password.errors } " />
-            <div *ngIf="submit && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Password is required!</div>     
-                <div *ngIf="f.password.errors.minlength">Password length must be greater than 6!</div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <label class="form-label">Confirm Password</label>
-            <input type="password" formControlName="confirmpassword" class="form-control" [ngClass]=" { 'is-invalid': submit && f.confirmpassword.errors } " />
-            <div *ngIf="submit && f.confirmpassword.errors" class="invalid-feedback">
-                <div *ngIf="f.confirmpassword.errors.required">Confirm Password is required!</div>     
-                <div *ngIf="f.confirmpassword.errors.mustMatch">Password doesn't match!</div>
-            </div>
-        </div>
-
-        <div formArrayName="skills">
-            <div *ngFor="let skillform of skills.controls; let i = index">
-              <div class="skill-form-row">
-                <label>Skill</label> 
-                    <select class="form-control" >
-                        <option value="0" selected disabled>Select</option>
-                        <option value="1" >Java</option>
-                        <option value="2" >ROR</option>
-                        <option value="3" >Python</option>
-                    </select>
-                    <button class="btn btn-danger mt-2" (click)="deleteSkill(i)">
-                        Delete
-                    </button>
-              </div>
-            </div>
-        </div>
     
-        <button (click)="addSkill()" class="btn btn-secondary mt-3">ADD Skills</button>
-
-        <div class="col-4 mt-4">
-            <button class="btn btn-primary">Submit</button>
-            <button class="btn btn-danger mx-4" type="reset" (click)="onReset()">Clear All</button>
+            <div class="form-group">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" formControlName="confirmpassword" class="form-control" [ngClass]=" { 'is-invalid': submit && f.confirmpassword.errors } " />
+                <div *ngIf="submit && f.confirmpassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.confirmpassword.errors.required">Confirm Password is required!</div>     
+                    <div *ngIf="f.confirmpassword.errors.mustMatch">Password doesn't match!</div>
+                </div>
+            </div>
+    
+            <div formArrayName="skills">
+                <div *ngFor="let skillform of skills.controls; let i = index">
+                  <div class="skill-form-row">
+                    <label>Skill</label> 
+                        <select class="form-control" >
+                            <option value="0" selected disabled>Select</option>
+                            <option value="1" >Java</option>
+                            <option value="2" >ROR</option>
+                            <option value="3" >Python</option>
+                        </select>
+                        <button class="btn btn-danger mt-2" (click)="deleteSkill(i)">
+                            Delete
+                        </button>
+                  </div>
+                </div>
+            </div>
+        
+            <button (click)="addSkill()" class="btn btn-secondary mt-3">ADD Skills</button>
+    
+            <div class="col-4 mt-4">
+                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-danger mx-4" type="reset" (click)="onReset()">Clear All</button>
+            </div>
         </div>
-    </div>
-</form>  
+    </form> 
+</div>
+ 
 

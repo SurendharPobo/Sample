@@ -1,5 +1,4 @@
-<div class="container-fluid px-5">
-    <hr>
+<div class="container-fluid px-5 mt-4">
     <table>
         <tr>
             <th>Email Address</th>
@@ -10,8 +9,9 @@
             <td>{{updateUserInfo.password}}</td>
         </tr>
     </table>
-
     <br>
+    <h1>{{name}}</h1>
+    <p><input type="text" [(ngModel)]="name"></p>
     <p><b>Click Count:</b> {{count}}</p>
     <button class="btn btn-primary" (click)="click()">Click Here</button>
     <br>
