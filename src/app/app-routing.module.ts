@@ -6,12 +6,12 @@ import { DirectiveComponent } from './Components/directive/directive.component';
 import { DataComponent } from './Components/data/data.component';
 import { StringCheckComponent } from './Components/string-check/string-check.component';
 import { ParentComponent } from './Components/parent/parent.component';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: '',
-    component :AppComponent
+    redirectTo: 'reactive',
+    pathMatch: 'full'
   },
 
   {
