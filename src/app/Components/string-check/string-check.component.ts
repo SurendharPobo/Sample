@@ -20,28 +20,28 @@ export class StringCheckComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(): void {
-    var ml=this.MatchName.length;
-    var sl=this.StringName.length;
+    var ml = this.MatchName.length;
+    var sl = this.StringName.length;
     for (let i = 0; i <= ml - 1; i++) {
       if (ml <= sl) {
         if (this.MatchName[i] == this.StringName[i]) {
           this.text = ("Letter Match");
         }
-        else{
-          this.text=("Letter Doesn't Match");
+        else {
+          this.text = ("Letter Doesn't Match");
         }
       }
-      else{
-        this.text=("Letter Doesn't Match");
+      else {
+        this.text = ("Letter Doesn't Match");
       }
-
     }
     if (this.MatchName == this.StringName) {
       this.match = ("Name Matched");
+      document.getElementById("str").style.color = "Green";
     }
     else {
       this.match = ("Name doesn't match");
+      document.getElementById("str").style.color = "Red";
     }
   }
-
 }

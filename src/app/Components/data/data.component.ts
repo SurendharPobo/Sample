@@ -10,6 +10,11 @@ export class DataComponent implements OnInit {
 
   updateUserInfo: any;
 
+  count=0;
+  click(){
+    this.count++;
+  }
+
   constructor(private _dataService: DataService) { }
 
   ngOnInit() {

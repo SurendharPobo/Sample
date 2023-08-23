@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,FormArray, Validators} from '@angular/forms'
+import { EMPTY } from 'rxjs';
 import { DataService } from 'src/app/Service/data.service';
 import { MustMatch } from 'src/app/_helper/must-match.validator';
 
@@ -13,8 +14,6 @@ export class ReactiveComponent implements OnInit {
 
   email: string;
   password: number;
-
-  txt = 'Surendhar'
 
 
   userForm: FormGroup;
@@ -77,16 +76,5 @@ export class ReactiveComponent implements OnInit {
   onReset(){
     this.submit = false;
     this.userForm.reset();
-  }
-
-
-  count=0;
-  ClickMe(){
-    this.count++;
-  }
-
-  value ='';
-  handleinput(event){
-    this.value=event.target.value;
   }
 }
