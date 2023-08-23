@@ -66,11 +66,9 @@ export class ReactiveComponent implements OnInit {
       password: this.password 
     });
 
-
     alert(
       'SUCCESS!! :-)\n\n' + JSON.stringify(this.userForm.value, null, 41)
     );
-
   }
 
   onReset(){

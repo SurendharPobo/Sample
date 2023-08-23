@@ -1,18 +1,21 @@
 <div class="container-fluid px-4">
     <h3>Child Component</h3>
-    <div *ngFor="let course of CoursesData">
-        <ul>
-            <li>
-                <p><b>Name :</b>{{course.Name}}</p> 
-                <p><b>Description :</b>{{course.Description}}</p>            
-            </li>
-        </ul>   
+    <div class="card">
+        <b>Data Coming from Parent Component</b>
+        <div *ngFor="let course of CoursesData">
+            <ul>
+                <li>
+                    <p><b>Name :</b>{{course.Name}}</p>
+                    <p><b>Description :</b>{{course.Description}}</p>
+                </li>
+            </ul>
+        </div>
     </div>
     Select your Course to know about the Description.
     <select (change)="getCourseId($event)" (click)="clickId()">
         <option selected disabled>Select</option>
         <option *ngFor="let course of CoursesData" value="{{course.id}}">
-            {{course.Name}} 
+            {{course.Name}}
         </option>
     </select>
 </div>
