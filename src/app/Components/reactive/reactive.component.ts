@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,FormArray, Validators} from '@angular/forms'
-import { EMPTY } from 'rxjs';
+
 import { DataService } from 'src/app/Service/data.service';
 import { MustMatch } from 'src/app/_helper/must-match.validator';
 
@@ -14,7 +14,6 @@ export class ReactiveComponent implements OnInit {
 
   email: string;
   password: number;
-
 
   userForm: FormGroup;
   submit: any = false;
