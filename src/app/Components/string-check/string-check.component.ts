@@ -11,6 +11,7 @@ export class StringCheckComponent implements OnInit, DoCheck {
   MatchName = '';
   text = '';
   match = '';
+  letter='';
 
   constructor() { }
 
@@ -25,6 +26,7 @@ export class StringCheckComponent implements OnInit, DoCheck {
     for (let i = 0; i <= ml - 1; i++) {
       if (ml <= sl) {
         if (this.MatchName[i] == this.StringName[i]) {
+          this.letter=this.MatchName[i];
           this.text = ("Letter Match");
         }
         else {

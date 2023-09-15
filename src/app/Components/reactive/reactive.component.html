@@ -3,7 +3,7 @@
         <div class="form px-5 ">
             <div class="form-group">
                 <label class="form-label" hi>Email address</label>
-                <input type="email" [(ngModel)]="email" formControlName="emailAddress" class="form-control" [ngClass]=" { 'is-invalid': submit && f.emailAddress.errors } "/>
+                <input type="email" formControlName="emailAddress" class="form-control" [ngClass]=" { 'is-invalid': submit && f.emailAddress.errors } "/>
                     <div *ngIf="submit && f.emailAddress.errors" class="invalid-feedback">
                         <div *ngIf="f.emailAddress.errors.required">Email is required</div>
                         <div *ngIf="f.emailAddress.errors.email">Enter correct email address</div>
@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label">Password</label>
-                <input type="password" [(ngModel)]="password" formControlName="password" class="form-control" [ngClass]=" { 'is-invalid': submit && f.password.errors } " />
+                <input type="password" formControlName="password" class="form-control" [ngClass]=" { 'is-invalid': submit && f.password.errors } " />
                 <div *ngIf="submit && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required!</div>     
                     <div *ngIf="f.password.errors.minlength">Password length must be greater than 6!</div>
